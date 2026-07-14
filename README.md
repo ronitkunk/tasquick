@@ -1,6 +1,6 @@
 # tasquick
 
-Change your Mac wallpaper to an Eisenhower Matrix created from a list of your tasks.
+Upgrade your Mac wallpaper to an Eisenhower Matrix created in real-time from a list of your tasks.
 
 ![tasquick banner](banner.png)
 
@@ -51,7 +51,7 @@ pip install pillow pyyaml
   added_date: 2026-07-15
 ```
 
-- From the repo root, run main.py on the YAML
+- From the repo root, run main.py on the YAML to begin wallpaper updates
     - It is recommended to run this in a `tmux` pane to prevent accidental termination
     - Replace `PATH_TO_YOUR_YAML` with the path, for example, `python main.py tasks.yaml`
 ```sh
