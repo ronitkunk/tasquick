@@ -70,3 +70,6 @@ It worked for me. Use at your own risk.
 
 ## Contribution
 Just make your own fork. See licence.
+
+## Declaration: AI use
+The code in this repository was written with the assistance of LLMs.
