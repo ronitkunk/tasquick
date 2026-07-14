@@ -1,0 +1,33 @@
+- name: Call about new fridge
+  important: true
+  urgent: false
+  added_date: 2026-07-15
+
+- name: Track Roomba battery order
+  important: true
+  urgent: false
+  added_date: 2026-07-15
+  due_date: 2026-07-16
+
+- name: Migrate/back up accounts on university email
+  important: true
+  urgent: true
+  added_date: 2026-07-15
+  due_date: 2026-07-15
+
+- name: Web check-in
+  important: true
+  urgent: true
+  added_date: 2026-07-14
+  due_date: 2026-07-14
+
+- name: Do laundry
+  important: false
+  urgent: true
+  added_date: 2026-07-15
+  due_date: 2026-07-15
+
+- name: Water purifier shopping
+  important: false
+  urgent: false
+  added_date: 2026-07-15
