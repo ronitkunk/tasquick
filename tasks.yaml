@@ -2,32 +2,45 @@
   important: true
   urgent: false
   added_date: 2026-07-15
+  completion_rate: 0.0
 
 - name: Track Roomba battery order
   important: true
   urgent: false
   added_date: 2026-07-15
-  due_date: 2026-07-16
+  due_date: 2026-07-20
+  completion_rate: 0.0
 
 - name: Migrate/back up accounts on university email
   important: true
   urgent: true
   added_date: 2026-07-15
-  due_date: 2026-07-15
+  due_date: 2026-07-30
+  completion_rate: 0.0
 
 - name: Web check-in
   important: true
   urgent: true
   added_date: 2026-07-14
   due_date: 2026-07-14
+  completion_rate: 0.5
 
 - name: Do laundry
   important: false
   urgent: true
   added_date: 2026-07-15
   due_date: 2026-07-15
+  completion_rate: 100.0
 
 - name: Water purifier shopping
   important: false
   urgent: false
   added_date: 2026-07-15
+  completion_rate: 0.0
+
+- name: mum autopay
+  important: true
+  urgent: false
+  added_date: 2026-07-15
+  due_date: 2026-07-20
+  completion_rate: 0.0
