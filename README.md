@@ -1,6 +1,6 @@
 # tasquick
 
-Upgrade your Mac wallpaper to an Eisenhower Matrix created in real-time from a list of your tasks.
+Upgrade your Mac wallpaper to an Eisenhower Matrix that auto-updates in real-time based on a list of your tasks.
 
 ![tasquick banner](banner.png)
 
