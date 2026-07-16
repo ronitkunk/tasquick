@@ -1,10 +1,12 @@
 - name: Call about new fridge
+  difficulty: 2.0
   important: true
   urgent: false
   added_date: 2026-07-15
   completion_rate: 0.0
 
 - name: Track Roomba battery order
+  difficulty: 1.0
   important: true
   urgent: false
   added_date: 2026-07-15
@@ -12,6 +14,7 @@
   completion_rate: 0.0
 
 - name: Migrate/back up accounts on university email
+  difficulty: 3.0
   important: true
   urgent: true
   added_date: 2026-07-15
@@ -19,26 +22,30 @@
   completion_rate: 0.0
 
 - name: Web check-in
+  difficulty: 3.0
   important: true
   urgent: true
   added_date: 2026-07-14
   due_date: 2026-07-14
-  completion_rate: 0.5
+  completion_rate: 1.0
 
 - name: Do laundry
+  difficulty: 2.0
   important: false
   urgent: true
   added_date: 2026-07-15
   due_date: 2026-07-15
-  completion_rate: 100.0
+  completion_rate: 1.0
 
 - name: Water purifier shopping
+  difficulty: 2.0
   important: false
   urgent: false
   added_date: 2026-07-15
   completion_rate: 0.0
 
-- name: mum autopay
+- name: fix mum's autopay
+  difficulty: 2.0
   important: true
   urgent: false
   added_date: 2026-07-15
