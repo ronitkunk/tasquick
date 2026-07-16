@@ -74,13 +74,12 @@ Given:
 - No. of tasks $n$
 - For each task $i \in \{1, 2, \ldots, n\}$:
   - Completion $c_i \in [0, 1]$
-  - Difficulty $D_i \in \mathbb{R}^+$
   - Urgency $U_i \in \{0, 1\}$
   - Importance $I_i \in \{0, 1\}$
   - Days to due date $d_i$ (or $\infty$ if the due date is not defined)
 
 We define:
-- The loss $\ell_i$ of each task as $\ell_i = D_i^2(1-c_i)^2\left(1+I_i+U_i\left(1+\frac{1}{1+\max(d_i,0)}\right)\right)$
+- The loss $\ell_i$ of each task as $\ell_i = (1-c_i)^2\left(1+I_i+U_i\left(1+\frac{1}{1+\max(d_i,0)}\right)\right)$
   - time to due date is only penalised if the task is urgent
   - if there is no due date, urgency is penalised with the same weight as importance
   - if there is a due date for an urgent task, the urgency penalty increases with closeness to the due date, maxxing out at twice the weight of importance

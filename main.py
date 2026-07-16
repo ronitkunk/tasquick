@@ -116,7 +116,6 @@ def compute_risk(tasks: List[Dict[str, Any]]) -> Tuple[float, torch.Tensor, torc
     c = torch.tensor([task["completion_rate"] for task in tasks], dtype=torch.float32, requires_grad=True)
     I = torch.tensor([1.0 if task.get("important", False) else 0.0 for task in tasks], dtype=torch.float32)
     U = torch.tensor([1.0 if task.get("urgent", False) else 0.0 for task in tasks], dtype=torch.float32)
-    D = torch.tensor([float(task.get("difficulty", 1.0)) for task in tasks], dtype=torch.float32)
 
     due_values: List[float] = []
     today = datetime.now().date()
@@ -135,7 +134,7 @@ def compute_risk(tasks: List[Dict[str, Any]]) -> Tuple[float, torch.Tensor, torc
     d_positive = torch.clamp(d, min=0.0)
 
     urgency_contribution = U * (1.0 + 1.0 / (1.0 + d_positive))
-    losses = (D**2) * (1.0 - c) ** 2 * (1.0 + I + urgency_contribution)
+    losses = (1.0 - c) ** 2 * (1.0 + I + urgency_contribution)
     R = losses.sum()
     R.backward()
 
@@ -170,7 +169,7 @@ def draw_theory_panel(ax: plt.Axes, tasks: List[Dict[str, Any]], risk_value: flo
     ax.text(
         WIDTH / 2,
         title_y,
-        r"GIVEN: No. of tasks $n$; $\forall i \in \{1, 2, \ldots, n\}$ Completion $c_i \in [0, 1]$, Difficulty $D_i \in \mathbb{R}^+$, Urgency $U_i \in \{0, 1\}$, Importance $I_i \in \{0, 1\}$, Days to due date (else $\infty$) $d_i$",
+        r"GIVEN: No. of tasks $n$; Completion $c_i \in [0, 1]$, Urgency $U_i \in \{0, 1\}$, Importance $I_i \in \{0, 1\}$, Days to due date (else $\infty$) $d_i$",
         color=TEXT_COLOR,
         fontsize=14,
         family="DejaVu Sans",
@@ -180,7 +179,7 @@ def draw_theory_panel(ax: plt.Axes, tasks: List[Dict[str, Any]], risk_value: flo
     ax.text(
         WIDTH / 2,
         title_y + line_gap,
-        r"DEFINE: Loss $\ell_i = D_i^2(1-c_i)^2\left(1+I_i+U_i\left(1+\frac{1}{1+\max(d_i,0)}\right)\right)$, Risk $R(c_1, c_2, \ldots, c_n)=\sum_{i=1}^{n}\ell_i = %.3f$" % risk_value,
+        r"DEFINE: Loss $\ell_i = (1-c_i)^2\left(1+I_i+U_i\left(1+\frac{1}{1+\max(d_i,0)}\right)\right)$, Risk $R(c_1, c_2, \ldots, c_n)=\sum_{i=1}^{n}\ell_i = %.3f$" % risk_value,
         color=TEXT_COLOR,
         fontsize=15,
         family="DejaVu Sans",
